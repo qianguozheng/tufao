@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['canhandlerequest',['canHandleRequest',['../class_tufao_1_1_http_file_server.html#aac85232b132fa935a45cc9746e2428fe',1,'Tufao::HttpFileServer::canHandleRequest(const HttpServerRequest &amp;request)'],['../class_tufao_1_1_http_file_server.html#ad94420c3abf2c996025155f10db28e86',1,'Tufao::HttpFileServer::canHandleRequest(const HttpServerRequest &amp;request, const QString &amp;root)']]],
   ['checkcontinue',['checkContinue',['../class_tufao_1_1_http_server.html#ab0cbe289f833f58a29ab299dcfab8dee',1,'Tufao::HttpServer']]],
   ['classhandlermanager',['ClassHandlerManager',['../class_tufao_1_1_class_handler_manager.html#aa0646de2b2ac1ef8cb525ab8ca3a9ec6',1,'Tufao::ClassHandlerManager']]],
   ['clear',['clear',['../class_tufao_1_1_http_server_request_router.html#a002a7834cdd7349efda8ef043a6236db',1,'Tufao::HttpServerRequestRouter::clear()'],['../class_tufao_1_1_http_upgrade_router.html#a9aacbe250826c1df1ce6edd3e14bb833',1,'Tufao::HttpUpgradeRouter::clear()']]],
