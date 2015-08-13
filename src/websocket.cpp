@@ -22,7 +22,8 @@
 
 #include <QtCore/QCryptographicHash>
 #include <QtNetwork/QHostAddress>
-#include <QtNetwork/QSslSocket>
+#include <QtNetwork/QTcpSocket>
+//#include <QtNetwork/QSslSocket>
 
 #if defined(NO_ERROR) && defined(_WIN32)
 # undef NO_ERROR
@@ -106,7 +107,7 @@ bool WebSocket::connectToHost(const QString &hostname,
     return connectToHost(hostname, 80, resource, headers);
 }
 
-bool WebSocket::connectToHostEncrypted(const QString &hostname, quint16 port,
+/*bool WebSocket::connectToHostEncrypted(const QString &hostname, quint16 port,
                                        const QByteArray &resource,
                                        const Headers &headers,
                                        const QList<QSslError> &ignoredSslErrors)
@@ -166,7 +167,8 @@ bool WebSocket::connectToHostEncrypted(const QHostAddress &address,
                                        const Headers &headers)
 {
     return connectToHostEncrypted(address, 443, resource, headers);
-}
+}*/
+
 
 bool WebSocket::startServerHandshake(const HttpServerRequest *request,
                                      const QByteArray &head,
@@ -444,7 +446,7 @@ void WebSocket::onSocketError(QAbstractSocket::SocketError error)
     emit disconnected();
 }
 
-void WebSocket::onSslErrors(const QList<QSslError> &)
+/*void WebSocket::onSslErrors(const QList<QSslError> &)
 {
     priv->socket->deleteLater();
     priv->socket = NULL;
@@ -454,7 +456,7 @@ void WebSocket::onSslErrors(const QList<QSslError> &)
     priv->lastError = SSL_HANDSHAKE_FAILED;
 
     emit disconnected();
-}
+}*/
 
 void WebSocket::onConnected()
 {
@@ -501,11 +503,11 @@ void WebSocket::onConnected()
     }
     WRITE_STRING(priv->socket->write, "\r\n\r\n");
 
-    if (qobject_cast<QSslSocket*>(priv->socket)) {
+    /*if (qobject_cast<QSslSocket*>(priv->socket)) {
         disconnect(priv->socket, SIGNAL(encrypted()), this, SLOT(onConnected()));
         disconnect(priv->socket, SIGNAL(error(QAbstractSocket::SocketError)),
                    this, SLOT(onSocketError(QAbstractSocket::SocketError)));
-    } else {
+    } else*/ {
         disconnect(priv->socket, SIGNAL(connected()), this, SLOT(onConnected()));
     }
 
@@ -543,11 +545,11 @@ void WebSocket::connectToHost(QAbstractSocket *socket,
     priv->clientNode->headers = headers;
     priv->clientNode->resource = resource;
 
-    if (qobject_cast<QSslSocket*>(priv->socket)) {
+    /*if (qobject_cast<QSslSocket*>(priv->socket)) {
         connect(priv->socket, SIGNAL(encrypted()), this, SLOT(onConnected()));
         connect(priv->socket, SIGNAL(sslErrors(QList<QSslError>)),
                 this, SLOT(onSslErrors(QList<QSslError>)));
-    } else {
+    } else */{
         connect(priv->socket, SIGNAL(connected()), this, SLOT(onConnected()));
     }
 

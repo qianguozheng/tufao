@@ -7,6 +7,12 @@ set(TUFAO_VERSION_MINOR 8)
 set(TUFAO_VERSION_PATCH 6)
 set(TUFAO_VERSION ${TUFAO_VERSION_MAJOR}.${TUFAO_VERSION_MINOR}.${TUFAO_VERSION_PATCH})
 set(TUFAO_BRIEF "An asynchronous web framework for C++ built on top of Qt")
+SET(CMAKE_SYSTEM_NAME Linux)
+SET(CMAKE_CXX_COMPILER "/SDK/OpenWrt-SDK-ramips-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-g++")
+SET(CMAKE_C_COMPILER "/SDK/OpenWrt-SDK-ramips-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-gcc")
+SET(CMAKE_FIND_ROOT_PATH "/SDK/OpenWrt-SDK-ramips-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2/staging_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/")
+SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 
 # Dependencies
 cmake_minimum_required(VERSION 2.8)

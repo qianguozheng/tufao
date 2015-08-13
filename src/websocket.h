@@ -33,7 +33,7 @@
 # undef NO_ERROR
 #endif
 
-class QSslError;
+//class QSslError;
 
 namespace Tufao {
 
@@ -307,26 +307,26 @@ public:
       \since
       0.7
       */
-    bool connectToHostEncrypted(const QString &hostname, quint16 port,
+/*    bool connectToHostEncrypted(const QString &hostname, quint16 port,
                                 const QByteArray &resource,
                                 const Headers &headers,
                                 const QList<QSslError> &ignoredSslErrors);
-
+*/
     /*!
       This is an overloaded function.
       */
-    bool connectToHostEncrypted(const QString &hostname, quint16 port,
+    /*bool connectToHostEncrypted(const QString &hostname, quint16 port,
                                 const QByteArray &resource,
-                                const Headers &headers = Headers());
+                                const Headers &headers = Headers());*/
 
     /*!
       This is an overloaded function.
 
       It uses port 443 to establish the connection.
       */
-    bool connectToHostEncrypted(const QString &hostname,
+    /*bool connectToHostEncrypted(const QString &hostname,
                                 const QByteArray &resource,
-                                const Headers &headers = Headers());
+                                const Headers &headers = Headers());*/
 
     /*!
       This is an overloaded function.
@@ -337,9 +337,9 @@ public:
       \since
       0.3
       */
-    bool connectToHostEncrypted(const QHostAddress &address, quint16 port,
+    /*bool connectToHostEncrypted(const QHostAddress &address, quint16 port,
                                 const QByteArray &resource,
-                                const Headers &headers = Headers());
+                                const Headers &headers = Headers());*/
 
     /*!
       This is an overloaded function.
@@ -349,9 +349,9 @@ public:
       \since
       0.3
       */
-    bool connectToHostEncrypted(const QHostAddress &address,
+    /*bool connectToHostEncrypted(const QHostAddress &address,
                                 const QByteArray &resource,
-                                const Headers &headers = Headers());
+                                const Headers &headers = Headers());*/
 
     /*!
       It establish a WebSocket connection initiated by \p request with \p head
@@ -499,7 +499,7 @@ public slots:
 
 private slots:
     void onSocketError(QAbstractSocket::SocketError error);
-    void onSslErrors(const QList<QSslError> &errors);
+    //void onSslErrors(const QList<QSslError> &errors);
     void onConnected();
     void onReadyRead();
     void onDisconnected();

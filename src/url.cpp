@@ -22,7 +22,7 @@
 #include "httpserverrequest.h"
 #include "headers.h"
 
-#include <QtNetwork/QSslSocket>
+//#include <QtNetwork/QSslSocket>
 #include <QtNetwork/QHostAddress>
 
 // Groups:
@@ -127,9 +127,9 @@ QByteArray Url::url(HttpServerRequest *request)
     if (host.isEmpty())
         host = request->socket()->localAddress().toString().toUtf8();
 
-    if (qobject_cast<QSslSocket*>(request->socket()))
-        return "https://" + host + request->url();
-    else
+    //if (qobject_cast<QSslSocket*>(request->socket()))
+    //    return "https://" + host + request->url();
+    //else
         return "http://" + host + request->url();
 }
 
