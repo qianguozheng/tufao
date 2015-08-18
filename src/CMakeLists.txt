@@ -77,8 +77,8 @@ else (USE_QT5)
         "-DQT_VERSION_PATCH=${QT_VERSION_PATCH}"
     )
 
-#    add_library("${TUFAO_LIBRARY}" SHARED ${tufao_SRC} ${tufao_MOC})
-    add_library("${TUFAO_LIBRARY}" STATIC ${tufao_SRC} ${tufao_MOC})
+    add_library("${TUFAO_LIBRARY}" SHARED ${tufao_SRC} ${tufao_MOC})
+#    add_library("${TUFAO_LIBRARY}" STATIC ${tufao_SRC} ${tufao_MOC})
     target_link_libraries("${TUFAO_LIBRARY}" ${QT_LIBRARIES})
 endif (USE_QT5)
 
